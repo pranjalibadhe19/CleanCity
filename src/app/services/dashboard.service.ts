@@ -8,7 +8,7 @@ export class DashboardService {
 
   constructor(private http: HttpClient) { 
 
-     DASHBOARD_API = 'http://15.207.157.102:8000/';
+     SERVER_API = 'http://15.207.157.102:8000/';
 
  
   }
