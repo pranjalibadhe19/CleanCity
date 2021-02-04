@@ -1,1 +1,52 @@
-<p>dashboard works!</p>
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+  <a href="#menu-toggle" id="menu-toggle" class="navbar-brand"
+    ><span class="navbar-toggler-icon"></span
+  ></a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarsExample02"
+    aria-controls="navbarsExample02"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExample02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Complaints</a>
+      </li>
+    </ul>
+    <i class="bi bi-arrow-clockwise pull-right"></i>
+  </div>
+</nav>
+<div id="wrapper" class="toggled">
+  <!-- Sidebar -->
+</div>
+
+<div class="row">
+  <div class="col-lg-4">
+    <div class="row">
+      <div
+        class="card col-lg-12"
+        *ngFor="let enquire of enquireDetails"
+      >
+        <i [class]="enquire.class"></i>
+        <div class="card-body">
+          <p class="card-text">
+            {{enquire.name}} {{enquire.mobilenumber}} <br />
+            {{enquire.date}}
+            <br />
+            {{enquire.address}}
+          </p>
+          <a class="btn btn-primary" (click)="viewComplaint(enquire)">View</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <app-view-complaint></app-view-complaint>
+  </div>
+</div>
