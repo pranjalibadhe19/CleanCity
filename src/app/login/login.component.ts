@@ -12,6 +12,10 @@ export class LoginComponent implements OnInit {
   password;
   language = 'en';
   errormessage;
+  firstname;
+  lastname;
+  mobilenumber;
+  confirmpassword;
 
   constructor(private loginService: LoginService, private router: Router) {}
 
@@ -33,4 +37,19 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+
+  register(){
+      let registerDetail = {
+        first_name: this.firstname,
+        last_name: this.lastname,
+        mobile_no: this.mobilenumber,
+        password: this.password,
+        confirm_password: this.confirmpassword,
+        language: 'en'
+      };
+      console.log(registerDetail);
+      this.loginService.register(registerDetail).subscribe((resp: any) => {
+        console.log(resp);
+      });  
+   }
 }

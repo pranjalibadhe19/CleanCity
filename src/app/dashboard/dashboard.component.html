@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand navbar-dark bg-primary">
-  <a href="#menu-toggle" id="menu-toggle" class="navbar-brand"
+  <a id="menu-toggle" class="navbar-brand"
     ><span class="navbar-toggler-icon"></span
   ></a>
   <button
@@ -16,10 +16,10 @@
   <div class="collapse navbar-collapse" id="navbarsExample02">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Complaints</a>
+        <a class="nav-link">Complaints</a>
       </li>
     </ul>
-    <i class="bi bi-arrow-clockwise pull-right"></i>
+    <i class="bi bi-arrow-clockwise pull-right"></i>I
   </div>
 </nav>
 <div id="wrapper" class="toggled">
@@ -36,8 +36,8 @@
         <i [class]="enquire.class"></i>
         <div class="card-body">
           <p class="card-text">
-            {{enquire.name}} {{enquire.mobilenumber}} <br />
-            {{enquire.date}}
+            {{enquire.title}} {{enquire.mobile_no}} <br />
+            {{enquire.created}}
             <br />
             {{enquire.address}}
           </p>

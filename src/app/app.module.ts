@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ViewComplaintComponent } from './dashboard/view-complaint/view-complaint.component';
+import { HttpAuthInterceptor } from './services/http.interceptor';
 
 @NgModule({
   declarations: [
@@ -16,15 +17,10 @@ import { ViewComplaintComponent } from './dashboard/view-complaint/view-complain
     DashboardComponent,
     ViewComplaintComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    [HttpClientModule,  ]
+  imports: [BrowserModule, AppRoutingModule, FormsModule, [HttpClientModule]],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpAuthInterceptor, multi: true }
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
-
-
+export class AppModule {}

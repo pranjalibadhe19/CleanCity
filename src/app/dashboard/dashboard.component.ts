@@ -7,49 +7,29 @@ import { DashboardService } from '../services/dashboard.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  enquireDetails = [
-    {
-      subward: 'sfg',
-      ward: 'fgh',
-      name: 'nikhil',
-      title: 'as',
-      description: 'sd',
-      status: 'completed',
-      mobilenumber: 9404505206,
-      date: '20 May 2020',
-      address: 'wakad'
-    },
-    {
-      subward: 'sfg',
-      ward: 'fgh',
-      name: 'pranjali',
-      title: 'as',
-      description: 'sd',
-      status: 'completed',
-      mobilenumber: 9028517277,
-      date: '20 May 2020',
-      address: 'wakad'
-    },
-    {
-      subward: 'sfg',
-      ward: 'fgh',
-      name: 'Pranik',
-      title: 'as',
-      description: 'sd',
-      status: 'completed',
-      mobilenumber: 9028517277,
-      date: '20 May 2020',
-      address: 'wakad'
-    }
-  ];
+
+  enquireDetails = [];
 
   constructor(private dashboardService: DashboardService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.enquires();
+  }
 
   viewComplaint(enquire) {
     console.log(enquire);
         this.dashboardService.enquire = enquire;
   console.log(this.dashboardService.enquire);
   }
+
+  enquires() {
+    let userEnquires = {status : 1}
+    this.dashboardService.enquires(userEnquires).subscribe((resp: any) => {
+      console.log(resp);
+      if (resp.status) {
+        this.enquireDetails = resp.data;
+      }
+    });
+  }
+
 }
