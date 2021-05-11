@@ -1,3 +1,37 @@
 .card {
-    margin: 50px 30px 140px 30px !important;
+    margin: 30px 20px 140px 10px !important;
+    height: 470px;
+    width: 500px;
+    padding: 20px;  
+    position: relative;
+    background-color: lightblue;
+}
+
+body {
+    font-family: 'Maven Pro', sans-serif;
+
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
+}
+
+.upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1
+}
+
+.lower {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    bottom: -10px;
+    z-index: 1
 }

@@ -19,7 +19,11 @@
         <a class="nav-link">Complaints</a>
       </li>
     </ul>
-    <i class="bi bi-arrow-clockwise pull-right"></i>I
+    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#registerModal">
+      Register Complaint
+    </button>
+
+    <!-- <i class="bi bi-arrow-clockwise pull-right"></i>I -->
   </div>
 </nav>
 <div id="wrapper" class="toggled">
@@ -50,3 +54,40 @@
     <app-view-complaint></app-view-complaint>
   </div>
 </div>
+
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel">Complete Data</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Ward : {{this.dashboardService.enquire?.sub_ward.ward.name}}</li>
+          <li class="list-group-item">Sub Ward : {{this.dashboardService.enquire?.sub_ward.name}}</li>
+          <li class="list-group-item">Name : {{this.dashboardService.enquire?.name}}</li>
+          <li class="list-group-item">Title : {{this.dashboardService.enquire?.title}}</li>
+          <li class="list-group-item">Adddress : {{this.dashboardService.enquire?.address}}</li>
+          <li class="list-group-item">Description : {{this.dashboardService.enquire?.description}}</li>
+          <li class="list-group-item">Mobile Number : {{this.dashboardService.enquire?.mobilenumber}}</li>
+          <li class="list-group-item">status : {{this.dashboardService.enquire?.status}}</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <label for="btn" class="button">Courses <span class="fa fa-caret-down"></span> </label> <input type="checkbox" id="btn">
+    <ul class="menu">
+        <li><a href="#">Java</a></li>

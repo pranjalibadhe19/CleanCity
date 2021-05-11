@@ -10,7 +10,7 @@ export class DashboardComponent implements OnInit {
 
   enquireDetails = [];
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(public dashboardService: DashboardService) {}
 
   ngOnInit(): void {
     this.enquires();
@@ -31,5 +31,6 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
+  
 
 }

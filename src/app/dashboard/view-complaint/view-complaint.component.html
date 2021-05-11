@@ -1,8 +1,99 @@
+<!-- 
+<div class="wrapper">
+  <div class="card" style="width: 18rem; " class="upper"> 
+    <div class="card-header">
+      Data 1 : 
+    </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Sub Ward : {{this.dashboardService.enquire?.sub_ward.name}}</li>
+            <li class="list-group-item">Ward : {{this.dashboardService.enquire?.sub_ward.ward.name}}</li>
+            <li class="list-group-item">Name : {{this.dashboardService.enquire?.name}}</li>
+            <li class="list-group-item">Title : {{this.dashboardService.enquire?.title}}</li>
+            <li class="list-group-item">Adddress : {{this.dashboardService.enquire?.address}}</li>
+            <li class="list-group-item">Description : {{this.dashboardService.enquire?.description}}</li>
+            <li class="list-group-item">Mobile Number : {{this.dashboardService.enquire?.mobilenumber}}</li>
+            <li class="list-group-item">status : {{this.dashboardService.enquire?.status}}</li>
+          </ul>
+        </div>
+</div> -->
 
-<div class="card"> 
-        <ul class="list-group list-group-flush">
+<div class="row">
+  <div class="col-lg-6">
+    <div class="wrapper">
+      <div class="card">
+          <div class="upper">
+            <li class="list-group-item">Title : {{this.dashboardService.enquire?.title}}</li>
+              <ul>
+                <li class="list-group-item">Ward : {{this.dashboardService.enquire?.sub_ward.ward.name}}</li>
           <li class="list-group-item">Sub Ward : {{this.dashboardService.enquire?.sub_ward.name}}</li>
+              </ul>
+          </div>
+          <div>
+            <ul  class="list-group">
+              <li class="list-group-item">Name : {{this.dashboardService.enquire?.name}}</li>
+              <li class="list-group-item">Mobile Number : {{this.dashboardService.enquire?.mobilenumber}}</li>
+              <li class="list-group-item">Adddress : {{this.dashboardService.enquire?.address}}</li>
+              <li class="list-group-item">Description : {{this.dashboardService.enquire?.description}}</li>
+            </ul>
+          </div>
+          <div class="lower">
+              <li class="list-group-item">status : {{this.dashboardService.enquire?.status}}</li>
+          </div>
+          <hr>
+          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            View
+          </button>
+      </div>
+    </div>  
+  </div>
+
+  <div class="col-lg-6">
+    <div class="wrapper">
+      <div class="card">
+          <div class="upper">
+            <li class="list-group-item">Title : {{this.dashboardService.enquire?.title}}</li>
+              <ul>
+                <li class="list-group-item">Ward : {{this.dashboardService.enquire?.sub_ward.ward.name}}</li>
+          <li class="list-group-item">Sub Ward : {{this.dashboardService.enquire?.sub_ward.name}}</li>
+              </ul>
+          </div>
+
+          <div>
+            <ul  class="list-group">
+              <li class="list-group-item">Name : {{this.dashboardService.enquire?.name}}</li>
+              <li class="list-group-item">Mobile Number : {{this.dashboardService.enquire?.mobilenumber}}</li>
+              <li class="list-group-item">Adddress : {{this.dashboardService.enquire?.address}}</li>
+              <li class="list-group-item">Description : {{this.dashboardService.enquire?.description}}</li>
+            </ul>
+          </div>
+          <div class="lower">
+              <li class="list-group-item">status : {{this.dashboardService.enquire?.status}}</li>
+          </div>
+          <hr>
+          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            View
+          </button>
+      </div>
+    </div>  
+  </div>
+</div>
+
+
+
+
+<!-- Modal for View -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Complete Data</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group list-group-flush">
           <li class="list-group-item">Ward : {{this.dashboardService.enquire?.sub_ward.ward.name}}</li>
+          <li class="list-group-item">Sub Ward : {{this.dashboardService.enquire?.sub_ward.name}}</li>
           <li class="list-group-item">Name : {{this.dashboardService.enquire?.name}}</li>
           <li class="list-group-item">Title : {{this.dashboardService.enquire?.title}}</li>
           <li class="list-group-item">Adddress : {{this.dashboardService.enquire?.address}}</li>
@@ -11,3 +102,9 @@
           <li class="list-group-item">status : {{this.dashboardService.enquire?.status}}</li>
         </ul>
       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
